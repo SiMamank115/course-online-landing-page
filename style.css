@@ -1,0 +1,16 @@
+.content {
+	min-height: 200px;
+	height: 100vh;
+	max-height: 600px;
+}
+.circle {
+	display: flex;
+	width: fit-content;
+	align-items: center;
+	aspect-ratio: 1 / 1;
+	border-radius: 100% !important;
+}
+.floating {
+	right: 10px;
+	bottom: 10px;
+}

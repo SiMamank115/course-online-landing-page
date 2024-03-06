@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Course Online</title>
+		<link rel="stylesheet" href="bootstrap-icons-1.11.3/font/bootstrap-icons.min.css" />
+		<link rel="stylesheet" href="bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<nav id="navbar" class="navbar navbar-expand-lg bg-body-secondary py-3 mb-2">
+			<div class="container-xxl px-2 px-md-5 px-sm-3">
+				<a class="navbar-brand" href="#">Idukasih</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse gap-3" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+						<li class="nav-item">
+							<a class="nav-link" href="#home">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#service">Service</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#testimonial">Testimonial</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#pricing">Pricing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#contact">Contact</a>
+						</li>
+					</ul>
+					<button class="btn" id="themeswitch" type="button">
+						<i id="theme1" class="bi bi-moon-stars"></i>
+						<i id="theme2" class="bi bi-sun-fill"></i>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<div class="container-xxl">
+			<div class="floating d-none position-fixed z-1 p-2">
+				<a class="btn circle bg-dark text-light" href="#navbar"><i class="bi bi-caret-up-fill"></i></a>
+			</div>
+			<div id="home" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-primary">HOME</div>
+			<div id="service" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-danger">SERVICE</div>
+			<div id="testimonial" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-secondary">TESTIMONIAL</div>
+			<div id="pricing" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-warning">PRICING</div>
+			<div id="contact" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-success">CONTACT</div>
+		</div>
+
+		<div class="footer py-3 bg-body-secondary z-3 position-relative">
+			<div class="container-xxl px-2 px-md-5 px-sm-3 d-flex flex-wrap align-items-center justify-content-between">
+				<div class="col-sm-6 col-12 flex-grow-1 d-flex gap-2">
+					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-instagram circle"></i></a>
+					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-facebook circle"></i></a>
+					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-whatsapp circle"></i></a>
+				</div>
+				<div class="px-0 col-sm-6 col-12 flex-grow-1 text-end"><i class="bi bi-c-circle"></i> 2024 Idukasih | All right reserved.</div>
+			</div>
+		</div>
+		<script src="bootstrap.bundle.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
