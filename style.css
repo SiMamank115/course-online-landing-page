@@ -1,7 +1,11 @@
+body {
+	min-height: 100vh;
+}
 .content {
-	min-height: 200px;
-	height: 100vh;
-	max-height: 600px;
+	margin: 2rem auto;
+}
+.h-70vh {
+	height: 70vh;
 }
 .circle {
 	display: flex;
@@ -13,4 +17,8 @@
 .floating {
 	right: 10px;
 	bottom: 10px;
+}
+.reguler {
+	border-top-width: 5px !important;
+	border-top-color: var(--bs-primary)!important;
 }

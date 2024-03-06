@@ -61,9 +61,40 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("scroll", (e) => {
-	if(window.scrollY > 200) {
-		document.querySelector(".floating").classList.remove("d-none")
+	if (window.scrollY > 200) {
+		document.querySelector(".floating").classList.remove("d-none");
 	} else {
-		document.querySelector(".floating").classList.add("d-none")
+		document.querySelector(".floating").classList.add("d-none");
 	}
 });
+
+function parse_query_string(query) {
+	var vars = query.split("&");
+	var query_string = {};
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split("=");
+		var key = decodeURIComponent(pair.shift());
+		var value = decodeURIComponent(pair.join("="));
+		// If first entry with this name
+		if (typeof query_string[key] === "undefined") {
+			query_string[key] = value;
+			// If second entry with this name
+		} else if (typeof query_string[key] === "string") {
+			var arr = [query_string[key], value];
+			query_string[key] = arr;
+			// If third or later entry with this name
+		} else {
+			query_string[key].push(value);
+		}
+	}
+	return query_string;
+}
+if (document.querySelector("#amount")) {
+	var query = window.location.search.substring(1);
+	var qs = parse_query_string(query);
+	if (qs?.opsi == "2") {
+		document.querySelector("#amount").textContent = "Rp. 124,000";
+	} else if (qs?.opsi == "1") {
+		document.querySelector("#amount").textContent = "Rp. 99,000";
+	}
+}

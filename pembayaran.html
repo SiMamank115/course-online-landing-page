@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Course Online</title>
+		<link rel="stylesheet" href="bootstrap-icons-1.11.3/font/bootstrap-icons.min.css" />
+		<link rel="stylesheet" href="bootstrap.min.css" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="d-flex flex-column">
+		<nav id="navbar" class="position-sticky top-0 z-3 shadow-sm navbar navbar-expand-lg bg-body-secondary mb-2 d-flex flex-column">
+			<div class="container-xxl px-4 px-md-5 py-2">
+				<a class="navbar-brand fw-bold" href="#">Idukasih</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse gap-3" id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
+						<li class="nav-item">
+							<a class="nav-link fw-bold col-lg-1 col-12" href="/#pricing">Back</a>
+						</li>
+					</ul>
+					<button class="btn col-lg-1 col-12" id="themeswitch" type="button">
+						<i id="theme1" class="bi bi-moon-stars"></i>
+						<i id="theme2" class="bi bi-sun-fill"></i>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<div class="container-xxl">
+			<div class="floating d-none position-fixed z-1 p-2">
+				<a class="btn circle bg-dark text-light" href="#navbar"><i class="bi bi-caret-up-fill"></i></a>
+			</div>
+			<div id="pay" class="content d-flex flex-wrap gap-5 px-sm-5 justify-content-center align-items-center">
+				<div class="h1 fs-1 col-lg-8 col-12 text-center">
+					Tolong membayar sejumlah <span id="amount" class="text-nowrap fw-bold text-success">Rp. 99,000</span> dengan menggunakan metode pembayaran yang ada!
+				</div>
+				<div class="accordion col-lg-8 col-12 shadow" id="payment">
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<i class="bi bi-bank2 me-2"></i>
+								Bank BCA
+							</button>
+						</h2>
+						<div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#payment">
+							<div class="accordion-body">
+								Untuk membayar menggunakan <strong>Back BCA</strong>, kirimkan ke nomer rekening, <strong>23872795613</strong> atas nama
+								<strong class="text-nowrap">Asep Wicaksono</strong>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								<i class="bi bi-bank2 me-2"></i>
+								Bank Mandiri
+							</button>
+						</h2>
+						<div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#payment">
+							<div class="accordion-body">
+								Untuk membayar menggunakan <strong>Back Mandiri</strong>, kirimkan ke nomer rekening, <strong>23872795613</strong> atas nama
+								<strong class="text-nowrap">Asep Wicaksono</strong>
+							</div>
+						</div>
+					</div>
+					<div class="accordion-item">
+						<h2 class="accordion-header">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								<i class="bi bi-wallet-fill me-2"></i>
+								Dana
+							</button>
+						</h2>
+						<div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#payment">
+							<div class="accordion-body">
+								Untuk membayar menggunakan <strong>Dana</strong>, kirimkan ke nomer, <strong>082725138734</strong> atas nama <strong class="text-nowrap">Asep Wicaksono</strong>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="h-1 fs-1 col-lg-8 col-12 text-center">
+					<span>Sudah membayar? Kirim bukti pembayaran melalui</span
+					><a class="text-nowrap text-decoration-none px-3 ms-3 text-bg-success rounded-5 pb-1 fs-4" href="#"><i class="bi bi-whatsapp"></i> Whatsapp</a>
+                    <span>Dan kembali ke</span
+					><a class="text-nowrap text-decoration-none px-3 ms-3 text-bg-primary rounded-5 pb-1 fs-4" href="/#pricing"><i class="bi bi-box-arrow-in-left"></i> Halaman Utama</a>
+				</div>
+			</div>
+			<!-- <div id="contact" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-success">CONTACT</div> -->
+		</div>
+
+		<div class="footer py-3 bg-body-secondary z-3 position-relative">
+			<div class="container-xxl px-2 px-md-5 px-sm-3 d-flex flex-wrap align-items-center justify-content-between">
+				<div class="col-sm-6 col-12 flex-grow-1 d-flex gap-2 justify-content-sm-start justify-content-center pb-4 pb-sm-0">
+					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-instagram circle"></i></a>
+					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-facebook circle"></i></a>
+					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-whatsapp circle"></i></a>
+				</div>
+				<div class="px-0 col-sm-6 col-12 flex-grow-1 text-sm-end text-center fw-semibold"><i class="bi bi-c-circle"></i> 2024 Idukasih | All right reserved.</div>
+			</div>
+		</div>
+		<script src="bootstrap.bundle.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

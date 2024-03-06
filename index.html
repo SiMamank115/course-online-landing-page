@@ -8,10 +8,13 @@
 		<link rel="stylesheet" href="bootstrap.min.css" />
 		<link rel="stylesheet" href="style.css" />
 	</head>
-	<body>
-		<nav id="navbar" class="navbar navbar-expand-lg bg-body-secondary py-3 mb-2">
-			<div class="container-xxl px-2 px-md-5 px-sm-3">
-				<a class="navbar-brand" href="#">Idukasih</a>
+	<body class="d-flex flex-column">
+		<nav id="navbar" class="position-sticky top-0 z-3 shadow-sm navbar navbar-expand-lg bg-body-secondary mb-2 d-flex flex-column">
+			<!-- <div class="container-xxl bg-warning py-1 fw-bold text-dark">
+				<div class="mx-auto">PROMO 15% AMBIL <a class="text-primary" href="#pricing">DISINI</a></div>
+			</div> -->
+			<div class="container-xxl px-4 px-md-5 px-sm-3 py-2">
+				<a class="navbar-brand fw-bold" href="#">Idukasih</a>
 				<button
 					class="navbar-toggler"
 					type="button"
@@ -26,22 +29,22 @@
 				<div class="collapse navbar-collapse gap-3" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
 						<li class="nav-item">
-							<a class="nav-link" href="#home">Home</a>
+							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#home">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#service">Service</a>
+							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#service">Service</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#testimonial">Testimonial</a>
+							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#testimonial">Testimonial</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#pricing">Pricing</a>
+							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#pricing">Pricing</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#contact">Contact</a>
+							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#contact">Contact</a>
 						</li>
 					</ul>
-					<button class="btn" id="themeswitch" type="button">
+					<button class="btn col-lg-1 col-12" id="themeswitch" type="button">
 						<i id="theme1" class="bi bi-moon-stars"></i>
 						<i id="theme2" class="bi bi-sun-fill"></i>
 					</button>
@@ -52,21 +55,105 @@
 			<div class="floating d-none position-fixed z-1 p-2">
 				<a class="btn circle bg-dark text-light" href="#navbar"><i class="bi bi-caret-up-fill"></i></a>
 			</div>
-			<div id="home" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-primary">HOME</div>
-			<div id="service" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-danger">SERVICE</div>
-			<div id="testimonial" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-secondary">TESTIMONIAL</div>
-			<div id="pricing" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-warning">PRICING</div>
-			<div id="contact" class="fs-1 content h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-success">CONTACT</div>
+			<div id="home" class="fs-1 content h-70vh h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-primary">HOME</div>
+			<div id="service" class="fs-1 content h-70vh h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-danger">SERVICE</div>
+			<div id="testimonial" class="fs-1 content h-70vh h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-secondary">TESTIMONIAL</div>
+			<div id="pricing" class="content sm-px-5 justify-content-center align-items-center">
+				<div class="h1 fs-1 fw-bold text-center py-5">Penawaran menarik hanya untuk <span class="text-primary">10 orang</span> tercepat!</div>
+				<div class="d-flex flex-md-nowrap flex-wrap-reverse gap-5">
+					<div class="card border-0 shadow">
+						<div class="card-header bg-body-secondary reguler rounded-top-2 border text-center py-3 fw-bold">Reguler</div>
+						<div class="card-body border border-top-0 rounded-bottom-2 bg-body-tertiary">
+							<h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, saepe?</h5>
+							<ul class="list-group pt-2 pb-3">
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem, ipsum.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem, ipsum dolor.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem ipsum dolor sit amet.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem, ipsum.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-x-circle-fill text-danger"></i>
+									<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, atque.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-x-circle-fill text-danger"></i>
+									<div>Lorem ipsum dolor sit amet consectetur.</div>
+								</li>
+							</ul>
+							<div class="d-flex gap-3">
+								<a href="#" class="btn btn-danger disabled text-decoration-line-through">Rp. 245,000</a>
+								<a href="/pembayaran.html?opsi=1" class="btn btn-primary fw-bold">Rp. 99,000</a>
+							</div>
+						</div>
+					</div>
+					<div class="card border-0 shadow">
+						<div class="card-header border-top border-5 border-success rounded-top-2 bg-success text-bg-success border border-top-0 text-center py-3 fw-bold">Premium</div>
+						<div class="card-body border border-top-0 rounded-bottom-2 bg-body-tertiary">
+							<h5 class="card-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, saepe?</h5>
+							<ul class="list-group pt-2 pb-3">
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem, ipsum.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem, ipsum dolor.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem ipsum dolor sit amet.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem, ipsum.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, atque.</div>
+								</li>
+								<li class="list-group-item bg-transparent py-1 px-0 d-flex gap-2 border-0">
+									<i class="bi bi-check-circle-fill text-success"></i>
+									<div>Lorem ipsum dolor sit amet consectetur.</div>
+								</li>
+							</ul>
+							<div class="d-flex gap-3">
+								<a href="#" class="btn btn-danger disabled text-decoration-line-through">Rp. 300,000</a>
+								<a href="/pembayaran.html?opsi=2" class="btn btn-primary fw-bold">Rp. 124,000</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="contact" class="fs-1 content h-70vh h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-success">CONTACT</div>
 		</div>
 
 		<div class="footer py-3 bg-body-secondary z-3 position-relative">
 			<div class="container-xxl px-2 px-md-5 px-sm-3 d-flex flex-wrap align-items-center justify-content-between">
-				<div class="col-sm-6 col-12 flex-grow-1 d-flex gap-2">
+				<div class="col-sm-6 col-12 flex-grow-1 d-flex gap-2 justify-content-sm-start justify-content-center pb-4 pb-sm-0">
 					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-instagram circle"></i></a>
 					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-facebook circle"></i></a>
 					<a class="btn circle bg-dark-subtle" href="#"><i class="bi bi-whatsapp circle"></i></a>
 				</div>
-				<div class="px-0 col-sm-6 col-12 flex-grow-1 text-end"><i class="bi bi-c-circle"></i> 2024 Idukasih | All right reserved.</div>
+				<div class="px-0 col-sm-6 col-12 flex-grow-1 text-sm-end text-center fw-semibold"><i class="bi bi-c-circle"></i> 2024 Idukasih | All right reserved.</div>
 			</div>
 		</div>
 		<script src="bootstrap.bundle.min.js"></script>
