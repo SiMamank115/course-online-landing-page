@@ -2,7 +2,8 @@ body {
 	min-height: 100vh;
 }
 .content {
-	margin: 2rem auto;
+	margin-top: 2rem;
+	margin-bottom: 3rem;
 }
 .h-70vh {
 	height: 70vh;
@@ -20,5 +21,34 @@ body {
 }
 .reguler {
 	border-top-width: 5px !important;
-	border-top-color: var(--bs-primary)!important;
+	border-top-color: var(--bs-primary) !important;
+}
+.nav-link {
+	padding: 0.5rem 1rem !important;
+	border-radius: 0.2rem;
+}
+.nav-link:hover {
+	background: rgba(var(--bs-body-color-rgb), 0.2);
+}
+.hero-text {
+	font-size: calc(1.75rem + 3.1vw);
+}
+.total-cust {
+	font-size: calc(1.75rem + 3.5vw);
+}
+.devider {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.devider > div {
+	width: 70%;
+	border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color) !important;
+}
+
+html[data-bs-theme="dark"] .go-up > i {
+	background-color: RGBA(var(--bs-light-rgb),var(--bs-bg-opacity,1))!important;
+	color: var(--bs-dark) !important;
 }

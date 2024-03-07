@@ -1,6 +1,6 @@
+// Theme function
 const getStoredTheme = () => localStorage.getItem("theme");
 const setStoredTheme = (theme) => localStorage.setItem("theme", theme);
-
 const getPreferredTheme = () => {
 	const storedTheme = getStoredTheme();
 	if (storedTheme) {
@@ -9,7 +9,6 @@ const getPreferredTheme = () => {
 
 	return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 };
-
 const setTheme = (theme) => {
 	if (theme === "auto") {
 		let defaultTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -32,24 +31,20 @@ const setTheme = (theme) => {
 		document.documentElement.setAttribute("data-bs-theme", theme);
 	}
 };
-
 setTheme(getPreferredTheme());
-
 document.querySelector("#themeswitch").onclick = () => {
 	let active = getStoredTheme();
 	let newActive = active == "dark" ? "light" : "dark";
 	setTheme(newActive);
 	setStoredTheme(newActive);
 };
-
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => {
 	const storedTheme = getStoredTheme();
 	if (storedTheme !== "light" && storedTheme !== "dark") {
 		setTheme(getPreferredTheme());
 	}
 });
-
-window.addEventListener("DOMContentLoaded", () => {
+const changeToActiveTheme = () => {
 	document.querySelectorAll("[data-bs-theme-value]").forEach((toggle) => {
 		toggle.addEventListener("click", () => {
 			const theme = toggle.getAttribute("data-bs-theme-value");
@@ -58,8 +53,9 @@ window.addEventListener("DOMContentLoaded", () => {
 			showActiveTheme(theme, true);
 		});
 	});
-});
+};
 
+// Scroll up function
 document.addEventListener("scroll", (e) => {
 	if (window.scrollY > 200) {
 		document.querySelector(".floating").classList.remove("d-none");
@@ -68,33 +64,136 @@ document.addEventListener("scroll", (e) => {
 	}
 });
 
-function parse_query_string(query) {
-	var vars = query.split("&");
-	var query_string = {};
-	for (var i = 0; i < vars.length; i++) {
-		var pair = vars[i].split("=");
-		var key = decodeURIComponent(pair.shift());
-		var value = decodeURIComponent(pair.join("="));
-		// If first entry with this name
-		if (typeof query_string[key] === "undefined") {
-			query_string[key] = value;
-			// If second entry with this name
-		} else if (typeof query_string[key] === "string") {
-			var arr = [query_string[key], value];
-			query_string[key] = arr;
-			// If third or later entry with this name
-		} else {
-			query_string[key].push(value);
-		}
+// URI function
+function parse_query_string(e) {
+	let t = e.split("&"),
+		i = {};
+	for (let l = 0; l < t.length; l++) {
+		let s = t[l].split("="),
+			n = decodeURIComponent(s.shift()),
+			r = decodeURIComponent(s.join("="));
+		if (void 0 === i[n]) i[n] = r;
+		else if ("string" == typeof i[n]) {
+			let f = [i[n], r];
+			i[n] = f;
+		} else i[n].push(r);
 	}
-	return query_string;
+	return i;
 }
 if (document.querySelector("#amount")) {
-	var query = window.location.search.substring(1);
-	var qs = parse_query_string(query);
+	let query = window.location.search.substring(1);
+	let qs = parse_query_string(query);
 	if (qs?.opsi == "2") {
 		document.querySelector("#amount").textContent = "Rp. 124,000";
 	} else if (qs?.opsi == "1") {
 		document.querySelector("#amount").textContent = "Rp. 99,000";
 	}
 }
+
+// Smooth scrolling for anchor links in navbar
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+	anchor.addEventListener("click", function (e) {
+		e.preventDefault();
+		window.location.replace(this.getAttribute("href"));
+		const targetId = this.getAttribute("href").substring(1);
+		const targetElement = document.getElementById(targetId);
+		let offset = 70 + parseInt(window.getComputedStyle(targetElement).marginTop);
+		window.scrollTo({
+			top: targetElement.offsetTop - offset,
+			behavior: "smooth",
+		});
+	});
+});
+
+// GSAP
+const GSAPfunction = () => {
+	gsap.registerPlugin(ScrollTrigger);
+	gsap.from("#hero-line", {
+		y: 100,
+		opacity: 0,
+	});
+	gsap.from("#sub-hero-line", {
+		y: 100,
+		opacity: 0,
+		delay: 0.2,
+	});
+	gsap.from("#hero-button", {
+		y: 100,
+		opacity: 0,
+		delay: 0.3,
+	});
+	gsap.from(".nodding", {
+		delay: 0.4,
+		y: 200,
+		opacity: 0,
+		yoyo: false,
+		onComplete: () => {
+			gsap.to(".nodding", {
+				y: 20,
+				yoyo: true,
+				repeat: -1,
+			});
+		},
+	});
+	gsap.to(".total-cust", {
+		scale: 1.5,
+		y: -20,
+		scrollTrigger: {
+			trigger: ".total-cust",
+			start: "top center+=200px",
+			once: true,
+		},
+		onUpdate: (e) => {
+			let target = document.querySelector(".total-cust");
+			target.textContent = `+0${parseInt(target.textContent) + Math.round((1000 * 1) / (65 * 1))}`;
+		},
+		onComplete: () => {
+			document.querySelector(".total-cust").textContent = "+1000";
+		},
+		duration: 1,
+	});
+	gsap.from("#after-hero-1 > img", {
+		y: 100,
+		opacity: 0,
+		scrollTrigger: {
+			trigger: "#after-hero-1 > img",
+			start: "top center+=200px",
+			once: true,
+		},
+	});
+	gsap.from("#after-hero-1 > h2", {
+		y: 100,
+		opacity: 0,
+		delay: 0.1,
+		scrollTrigger: {
+			trigger: "#after-hero-1 > img",
+			start: "top center+=200px",
+			once: true,
+		},
+	});
+	gsap.from("#after-hero-2 > img", {
+		y: 100,
+		opacity: 0,
+		scrollTrigger: {
+			trigger: "#after-hero-2 > img",
+			start: "top center+=200px",
+			once: true,
+		},
+	});
+	gsap.from("#after-hero-2 > h2", {
+		y: 100,
+		opacity: 0,
+		delay: 0.1,
+		scrollTrigger: {
+			trigger: "#after-hero-2 > img",
+			start: "top center+=200px",
+			once: true,
+		},
+	});
+};
+
+// bundler
+document.addEventListener("DOMContentLoaded", (event) => {
+	changeToActiveTheme();
+	GSAPfunction();
+});

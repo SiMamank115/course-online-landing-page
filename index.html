@@ -10,13 +10,10 @@
 	</head>
 	<body class="d-flex flex-column">
 		<nav id="navbar" class="position-sticky top-0 z-3 shadow-sm navbar navbar-expand-lg bg-body-secondary mb-2 d-flex flex-column">
-			<!-- <div class="container-xxl bg-warning py-1 fw-bold text-dark">
-				<div class="mx-auto">PROMO 15% AMBIL <a class="text-primary" href="#pricing">DISINI</a></div>
-			</div> -->
 			<div class="container-xxl px-4 px-md-5 px-sm-3 py-2">
 				<a class="navbar-brand fw-bold" href="#">Idukasih</a>
 				<button
-					class="navbar-toggler"
+					class="navbar-toggler border-0"
 					type="button"
 					data-bs-toggle="collapse"
 					data-bs-target="#navbarSupportedContent"
@@ -26,25 +23,25 @@
 				>
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse gap-3" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse gap-3 pt-lg-0 pt-4" id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-3">
 						<li class="nav-item">
-							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#home">Home</a>
+							<a class="nav-link fw-semibold" href="#home">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#service">Service</a>
+							<a class="nav-link fw-semibold" href="#service">Service</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#testimonial">Testimonial</a>
+							<a class="nav-link fw-semibold" href="#testimonial">Testimonial</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#pricing">Pricing</a>
+							<a class="nav-link fw-semibold" href="#pricing">Pricing</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link col-lg-1 col-12 fw-semibold" href="#contact">Contact</a>
+							<a class="nav-link fw-semibold" href="#contact">Contact</a>
 						</li>
 					</ul>
-					<button class="btn col-lg-1 col-12" id="themeswitch" type="button">
+					<button class="nav-link col-lg-1 col-12" id="themeswitch" type="button">
 						<i id="theme1" class="bi bi-moon-stars"></i>
 						<i id="theme2" class="bi bi-sun-fill"></i>
 					</button>
@@ -53,13 +50,41 @@
 		</nav>
 		<div class="container-xxl">
 			<div class="floating d-none position-fixed z-1 p-2">
-				<a class="btn circle bg-dark text-light" href="#navbar"><i class="bi bi-caret-up-fill"></i></a>
+				<a class="text-decoration-none go-up" href="#home"><i class="bi bi-caret-up-fill btn circle text-bg-dark fs-4 bg-opacity-75"></i></a>
 			</div>
-			<div id="home" class="fs-1 content h-70vh h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-primary">HOME</div>
+			<div id="home" class="fs-1 content h1 d-flex flex-column justify-content-start align-items-center bg-opacity-25 bg-primarys">
+				<h1 id="hero-line" class="hero-text pb-lg-5 pb-2 pt-lg-4 pt-2 col-lg-6 col-md-8 col-sm-10 text-center">Lorem ipsum dolor sit amet?</h1>
+				<div id="sub-hero-line" class="text-center col-12 col-md-8 pb-lg-5 pb-3 h3 fw-normal lh-base">
+					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur
+				</div>
+				<button id="hero-button" class="btn btn-primary btn-lg rounded-1 mb-4">Bluebanded Goby</button>
+				<a id="hero-navigation" class="mb-5 nodding" href="#after-hero-1"><i class="bi bi-arrow-down-circle-fill h1 text-body-secondary"></i></a>
+				<div class="devider">
+					<div></div>
+				</div>
+				<div id="after-hero-1" class="w-100 d-flex flex-lg-row flex-column-reverse gap-lg-5 gap-3 my-5 justify-content-center align-items-center">
+					<h2 class="text-lg-end text-center col-lg-4 col-12 lh-sm fs-2 fw-normal">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore nobis in corrupti quibusdam soluta animi labore eveniet repudiandae harum facere?
+					</h2>
+					<img src="https://fakeimg.pl/640x360?font=bebas" class="col-lg-6 col-12" alt="..." />
+				</div>
+				<div class="devider">
+					<div></div>
+				</div>
+				<div id="after-hero-2" class="w-100 d-flex flex-lg-row flex-column-reverse gap-lg-5 gap-3 my-5 justify-content-center align-items-center">
+					<img src="https://fakeimg.pl/640x480?font=bebas" class="col-lg-6 col-12" alt="..." />
+					<h2 class="text-lg-start text-center col-lg-4 col-12 lh-sm fs-2 fw-normal">
+						Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat nisi accusamus earum id ex voluptates quisquam reprehenderit, vitae animi corrupti dignissimos pariatur, dolor
+						cumque. Esse!
+					</h2>
+				</div>
+				<div class="h2 fw-normal col-lg-8 text-center py-lg-5 py-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores, similique.</div>
+				<div class="total-cust fw-bolder text-success">+0000</div>
+			</div>
 			<div id="service" class="fs-1 content h-70vh h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-danger">SERVICE</div>
 			<div id="testimonial" class="fs-1 content h-70vh h1 d-flex justify-content-center align-items-center bg-opacity-25 bg-secondary">TESTIMONIAL</div>
 			<div id="pricing" class="content sm-px-5 justify-content-center align-items-center">
-				<div class="h1 fs-1 fw-bold text-center py-5">Penawaran menarik hanya untuk <span class="text-primary">10 orang</span> tercepat!</div>
+				<div class="h1 fs-1 fw-bold text-center pb-5 pt-2">Penawaran menarik hanya untuk <span class="text-primary">10 orang</span> tercepat!</div>
 				<div class="d-flex flex-md-nowrap flex-wrap-reverse gap-5">
 					<div class="card border-0 shadow">
 						<div class="card-header bg-body-secondary reguler rounded-top-2 border text-center py-3 fw-bold">Reguler</div>
@@ -156,6 +181,8 @@
 				<div class="px-0 col-sm-6 col-12 flex-grow-1 text-sm-end text-center fw-semibold"><i class="bi bi-c-circle"></i> 2024 Idukasih | All right reserved.</div>
 			</div>
 		</div>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 		<script src="bootstrap.bundle.min.js"></script>
 		<script src="script.js"></script>
 	</body>
