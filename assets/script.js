@@ -117,11 +117,6 @@ const GSAPfunction = () => {
 		opacity: 0,
 		delay: 0.2,
 	});
-	gsap.from("#hero-button", {
-		y: 100,
-		opacity: 0,
-		delay: 0.3,
-	});
 	gsap.from(".nodding", {
 		delay: 0.4,
 		y: 200,
@@ -152,45 +147,30 @@ const GSAPfunction = () => {
 		},
 		duration: 1,
 	});
-	gsap.from("#after-hero-1 > img", {
-		y: 100,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: "#after-hero-1 > img",
-			start: "top center+=200px",
-			once: true,
-		},
+	document.querySelectorAll(".scaling").forEach((e) => {
+		console.log( e.dataset?.scale ?? 1.2);
+		gsap.to(e, {
+			scale: e.dataset?.scale ?? 1.2,
+			opacity: 0.5,
+			yoyo: true,
+			repeat: -1,
+		});
 	});
-	gsap.from("#after-hero-1 > h2", {
-		y: 100,
-		opacity: 0,
-		delay: 0.1,
-		scrollTrigger: {
-			trigger: "#after-hero-1 > img",
-			start: "top center+=200px",
-			once: true,
-		},
-	});
-	gsap.from("#after-hero-2 > img", {
-		y: 100,
-		opacity: 0,
-		scrollTrigger: {
-			trigger: "#after-hero-2 > img",
-			start: "top center+=200px",
-			once: true,
-		},
-	});
-	gsap.from("#after-hero-2 > h2", {
-		y: 100,
-		opacity: 0,
-		delay: 0.1,
-		scrollTrigger: {
-			trigger: "#after-hero-2 > img",
-			start: "top center+=200px",
-			once: true,
-		},
+	document.querySelectorAll(".go-daftar, #after-hero-1 > *, #after-hero-2 > *, #servicecard > *, .trigger-1").forEach((e) => {
+		gsap.from(e, {
+			y: 100,
+			opacity: 0,
+			delay: e.dataset?.delay ?? 0,
+			scrollTrigger: { trigger: e, start: "top center+=200px", once: true },
+		});
 	});
 };
+const splideImages = [
+	"./images/testimoni-1.jpeg",
+	// "./images/testimoni-2.jpg",
+	"./images/testimoni-3.png",
+	"./images/testimoni-4.jpeg",
+];
 const splides = () => {
 	var splide = new Splide(".splide", {
 		type: "loop",
@@ -205,17 +185,27 @@ const splides = () => {
 		autoPlay: true,
 		breakpoints: {
 			640: {
-				heightRatio:1
+				heightRatio: 1,
 			},
 		},
 	});
+
 	splide.mount();
+	let container = document.querySelector("ul.splide__list");
+	if (container) {
+		splideImages.forEach((e) => {
+			splide.add(`<li class="splide__slide"><img src="${e}" alt="testimonial" /></li>`);
+		});
+	}
+	setTimeout(() => {
+		splide.go("<");
+	}, 100);
 };
 
 // bundler
 document.addEventListener("DOMContentLoaded", (event) => {
-	window.scrollY = 0
 	changeToActiveTheme();
 	GSAPfunction();
 	splides();
 });
+

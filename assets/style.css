@@ -30,11 +30,17 @@ body {
 .nav-link:hover {
 	background: rgba(var(--bs-body-color-rgb), 0.2);
 }
-.hero-text {
+.big-size {
 	font-size: calc(1.25rem + 2.8vw);
+}
+.normal-size {
+	font-size: calc(1rem + 1vw);
 }
 .total-cust {
 	font-size: calc(1.75rem + 3.5vw);
+}
+.service-card-text {
+	font-size: calc(0.55rem + 0.8vw);
 }
 .devider {
 	width: 100%;
@@ -51,4 +57,11 @@ body {
 html[data-bs-theme="dark"] .go-up > i {
 	background-color: RGBA(var(--bs-light-rgb),var(--bs-bg-opacity,1))!important;
 	color: var(--bs-dark) !important;
+}
+.go-daftar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1.75rem;
 }
