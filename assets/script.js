@@ -204,7 +204,7 @@ const splides = () => {
 // bundler
 document.addEventListener("DOMContentLoaded", (event) => {
 	changeToActiveTheme();
-	if (window.location.pathname == "/" || window.location.pathname == "/index.html") {
+	if (window.location.pathname.endsWith("/") || window.location.pathname == "/index.html") {
 		GSAPfunction();
 		splides();
 	}
