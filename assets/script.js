@@ -191,9 +191,31 @@ const GSAPfunction = () => {
 		},
 	});
 };
+const splides = () => {
+	var splide = new Splide(".splide", {
+		type: "loop",
+		drag: "free",
+		lazyLoad: "nearby",
+		autoWidth: true,
+		focus: "center",
+		// width: 2000,
+		heightRatio: 0.6,
+		gap: 5,
+		snap: true,
+		autoPlay: true,
+		breakpoints: {
+			640: {
+				heightRatio:1
+			},
+		},
+	});
+	splide.mount();
+};
 
 // bundler
 document.addEventListener("DOMContentLoaded", (event) => {
+	window.scrollY = 0
 	changeToActiveTheme();
 	GSAPfunction();
+	splides();
 });

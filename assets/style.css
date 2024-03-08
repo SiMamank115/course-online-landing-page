@@ -2,8 +2,8 @@ body {
 	min-height: 100vh;
 }
 .content {
-	margin-top: 2rem;
-	margin-bottom: 3rem;
+	margin-top: 4rem;
+	margin-bottom: 6rem;
 }
 .h-70vh {
 	height: 70vh;
@@ -31,7 +31,7 @@ body {
 	background: rgba(var(--bs-body-color-rgb), 0.2);
 }
 .hero-text {
-	font-size: calc(1.75rem + 3.1vw);
+	font-size: calc(1.25rem + 2.8vw);
 }
 .total-cust {
 	font-size: calc(1.75rem + 3.5vw);
