@@ -148,7 +148,6 @@ const GSAPfunction = () => {
 		duration: 1,
 	});
 	document.querySelectorAll(".scaling").forEach((e) => {
-		console.log( e.dataset?.scale ?? 1.2);
 		gsap.to(e, {
 			scale: e.dataset?.scale ?? 1.2,
 			opacity: 0.5,
@@ -205,7 +204,8 @@ const splides = () => {
 // bundler
 document.addEventListener("DOMContentLoaded", (event) => {
 	changeToActiveTheme();
-	GSAPfunction();
-	splides();
+	if (window.location.pathname == "/" || window.location.pathname == "/index.html") {
+		GSAPfunction();
+		splides();
+	}
 });
-
