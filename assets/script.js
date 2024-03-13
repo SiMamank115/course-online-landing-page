@@ -80,13 +80,39 @@ function parse_query_string(e) {
 	}
 	return i;
 }
+const googleFormInit = async () => {
+	await fetch("/config.json")
+		.then((e) => e.json())
+		.then((data) => {
+			if (!data) return;
+			let formParent = document.querySelector("#paymentForm");
+			let formBuktiParent = document.querySelector("#paymentForm2");
+			if (formParent) {
+				formParent.innerHTML = `<iframe
+				src="${data.formPendaftaran}"
+				class="col-12 rounded-3 overflow-hidden shadow"
+				frameborder="0"
+				marginheight="0"
+				marginwidth="0"
+				>Memuat…</iframe
+			>`;
+			}
+			if (formBuktiParent) {
+				formBuktiParent.innerHTML = `<a id="buktiButton" target="_blank" href="${data.formBukti}" class="btn btn-success rounded-2 px-md-5 py-md-4 btn-lg" type="button">Kirim Bukti!</a>`;
+			}
+		});
+};
 if (document.querySelector("#amount")) {
 	let query = window.location.search.substring(1);
 	let qs = parse_query_string(query);
 	if (qs?.opsi == "2") {
 		document.querySelector("#amount").textContent = "Rp. 124,000";
+		googleFormInit();
 	} else if (qs?.opsi == "1") {
 		document.querySelector("#amount").textContent = "Rp. 99,000";
+		googleFormInit();
+	} else {
+		window.location.replace("index.html");
 	}
 }
 
@@ -177,7 +203,6 @@ const splides = () => {
 		lazyLoad: "nearby",
 		autoWidth: true,
 		focus: "center",
-		// width: 2000,
 		heightRatio: 0.6,
 		gap: 5,
 		snap: true,
@@ -207,5 +232,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
 	if (window.location.pathname.endsWith("/") || window.location.pathname.endsWith("/index.html")) {
 		GSAPfunction();
 		splides();
+		const sectionArray = document.querySelectorAll(".content");
+		const sectionPosition = {};
+		const offset = document.querySelector(".navbar").offsetHeight;
+		sectionArray.forEach((section) => (sectionPosition[section.id] = section.offsetTop));
+
+		window.onscroll = () => {
+			let scrollPosition = document.documentElement.scrollTop || document.body.scrollTop;
+			for (id in sectionPosition) {
+				if (sectionPosition[id] - offset * 3 <= scrollPosition) {
+					console.log(sectionPosition[id] - offset, scrollPosition);
+					document.querySelectorAll("a.nav-link").forEach((e) => {
+						e.classList.remove("active")
+					});
+					document.querySelectorAll(`a.nav-link[href='#${id}']`).forEach((e) => {
+						e.classList.add("active")
+					});
+				}
+			}
+		};
 	}
 });
