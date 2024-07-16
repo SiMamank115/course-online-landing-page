@@ -81,7 +81,7 @@ function parse_query_string(e) {
 	return i;
 }
 const googleFormInit = async () => {
-	await fetch("/config.json")
+	await fetch("./config.json")
 		.then((e) => e.json())
 		.then((data) => {
 			if (!data) return;
